@@ -1,5 +1,7 @@
 package net.codejava.trajetoria_cidadao.service;
 
-public interface DimCidadaoRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface DimCidadaoRepository extends JpaRepository<Product, Integer>{
 
 }
