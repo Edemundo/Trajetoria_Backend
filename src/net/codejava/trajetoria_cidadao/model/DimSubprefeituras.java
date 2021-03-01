@@ -2,7 +2,7 @@ package net.codejava.trajetoria_cidadao.model;
 
 import java.sql.Date;
 
-public class Contact {
+public class DimSubprefeituras {
 	
 	private Integer cd_subprefeitura;
 	private String nm_subprefeitura;
@@ -11,17 +11,17 @@ public class Contact {
 	private Date dt_carga;
 	private String origem_dado;
 	
-	public Contact(Integer cd_subprefeitura, String nm_subprefeitura, String cd_sigla, Integer ci_ativo_inativo, Date dt_carga, String origem_dado) {
+	public DimSubprefeituras(Integer cd_subprefeitura, String nm_subprefeitura, String cd_sigla, Integer ci_ativo_inativo, Date dt_carga, String origem_dado) {
 		
 		this(nm_subprefeitura, cd_sigla, ci_ativo_inativo, dt_carga, origem_dado);
 		this.setCd_subprefeitura(cd_subprefeitura);
 	}
 	
-	public Contact() {
+	public DimSubprefeituras() {
 		
 	}
 	
-	public Contact(String nm_subprefeitura, String cd_sigla, Integer ci_ativo_inativo, Date dt_carga, String origem_dado) {
+	public DimSubprefeituras(String nm_subprefeitura, String cd_sigla, Integer ci_ativo_inativo, Date dt_carga, String origem_dado) {
 		this.nm_subprefeitura = nm_subprefeitura;
 		this.cd_sigla = cd_sigla;
 		this.ci_ativo_inativo = ci_ativo_inativo;

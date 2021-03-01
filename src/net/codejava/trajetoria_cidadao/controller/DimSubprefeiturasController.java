@@ -12,20 +12,20 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import net.codejava.trajetoria_cidadao.dao.ContactDAO;
-import net.codejava.trajetoria_cidadao.model.Contact;
+import net.codejava.trajetoria_cidadao.dao.DimSubprefeiturasDAO;
+import net.codejava.trajetoria_cidadao.model.DimSubprefeituras;
 
 @Controller
-public class MainController {
+public class DimSubprefeiturasController {
 	
 	@Autowired
-	private ContactDAO contactDAO;
+	private DimSubprefeiturasDAO dsptDAO;
 	
 	@RequestMapping(value = "/")
 	public ModelAndView listContact(ModelAndView model) {
 		
-		List<Contact> listContact = contactDAO.list();
-		model.addObject("listContact", listContact);
+		List<DimSubprefeituras> listDspt = dsptDAO.list();
+		model.addObject("listDspt", listDspt);
 		model.setViewName("index");
 		
 		return model;

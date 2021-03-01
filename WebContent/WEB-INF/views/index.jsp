@@ -20,16 +20,27 @@
 				<th>Data Carga</th>
 				<th>Origem do Dado</th>
 			</tr>
-			<c:forEach items="${listContact}" var="contact">
+			<c:forEach items="${listContact}" var="Dspt">
 			<tr>
-				<td>${contact.cd_subprefeitura}</td>
-				<td>${contact.nm_subprefeitura}</td>
-				<td>${contact.cd_sigla}</td>
-				<td>${contact.ci_ativo_inativo}</td>
-				<td>${contact.dt_carga}</td>
-				<td>${contact.origem_dado}</td>
+				<td>${Dspt.cd_subprefeitura}</td>
+				<td>${Dspt.nm_subprefeitura}</td>
+				<td>${Dspt.cd_sigla}</td>
+				<td>${Dspt.ci_ativo_inativo}</td>
+				<td>${Dspt.dt_carga}</td>
+				<td>${Dspt.origem_dado}</td>
 			</tr>				
 			</c:forEach>
+		</table>
+		<br><br><br><br><br>
+		<h1>Serviço de Hospedagem de um Cidadão</h1>
+		<table border="1" cellpadding="5">
+			<tr>
+				<th>Código do Cidadão</th>
+				<th>Código do Serviço de Procura</th>
+				<th>Código do Motivo de Procura</th>
+				<th>Origem da Procura</th>
+				<th>Data do Desligamento</th>
+			</tr>
 		</table>
 	</div>
 </body>

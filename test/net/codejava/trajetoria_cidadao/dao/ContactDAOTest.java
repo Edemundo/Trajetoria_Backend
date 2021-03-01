@@ -9,12 +9,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
-import net.codejava.trajetoria_cidadao.model.Contact;
+import net.codejava.trajetoria_cidadao.model.DimSubprefeituras;
 
 class ContactDAOTest {
 
 	private DriverManagerDataSource dataSource;
-	private ContactDAO dao;
+	private DimSubprefeiturasDAO dao;
 	
 	@BeforeEach
 	void setupBeforeEach() {
@@ -24,7 +24,7 @@ class ContactDAOTest {
 		dataSource.setUsername("root");
 		dataSource.setPassword("");
 		
-		dao = new ContactDAOImpl(dataSource);
+		dao = new DimSubprefeiturasDAOImpl(dataSource);
 	}
 	
 //	@Test
@@ -65,9 +65,9 @@ class ContactDAOTest {
 
 	@Test
 	void testList() {
-		List<Contact> listContacts = dao.list();
+		List<DimSubprefeituras> listContacts = dao.list();
 		
-		for(Contact aContact : listContacts) {
+		for(DimSubprefeituras aContact : listContacts) {
 			System.out.println(aContact);
 		}
 		

@@ -12,13 +12,13 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.jdbc.core.RowMapper;
 
-import net.codejava.trajetoria_cidadao.model.Contact;
+import net.codejava.trajetoria_cidadao.model.DimSubprefeituras;
 
-public class ContactDAOImpl implements ContactDAO {
+public class DimSubprefeiturasDAOImpl implements DimSubprefeiturasDAO {
 
 	private JdbcTemplate jdbcTemplate;
 	
-	public ContactDAOImpl(DataSource dataSource) {
+	public DimSubprefeiturasDAOImpl(DataSource dataSource) {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 	
@@ -35,27 +35,27 @@ public class ContactDAOImpl implements ContactDAO {
 //	}
 
 //	@Override
-//	public Contact get(Integer id) {
-//		String sql = "SELECT * FROM Contact WHERE contact_id=" + id;
-//		
-//		ResultSetExtractor<Contact> extractor = new ResultSetExtractor<Contact>() {
-//
-//			@Override
-//			public Contact extractData(ResultSet rs) throws SQLException, DataAccessException {
-//				if(rs.next()) {
-//					String name = rs.getString("name");
-//					String email = rs.getString("email");
-//					String address = rs.getString("address");
-//					String phone = rs.getString("phone");
-//					
-//					return new Contact(id, name, email, address, phone); 
-//				}
-//				return null;
-//			}			
-//		};
-//		
-//		return jdbcTemplate.query(sql, extractor);
-//	}
+////	public Contact get(Integer id) {
+////		String sql = "SELECT * FROM Contact WHERE contact_id=" + id;
+////		
+////		ResultSetExtractor<Contact> extractor = new ResultSetExtractor<Contact>() {
+////
+////			@Override
+////			public Contact extractData(ResultSet rs) throws SQLException, DataAccessException {
+////				if(rs.next()) {
+////					String name = rs.getString("name");
+////					String email = rs.getString("email");
+////					String address = rs.getString("address");
+////					String phone = rs.getString("phone");
+////					
+////					return new Contact(id, name, email, address, phone); 
+////				}
+////				return null;
+////			}			
+////		};
+////		
+////		return jdbcTemplate.query(sql, extractor);
+////	}
 
 //	@Override
 //	public int delete(Integer id) {
@@ -65,13 +65,13 @@ public class ContactDAOImpl implements ContactDAO {
 //	}
 
 	@Override
-	public List<Contact> list() {
+	public List<DimSubprefeituras> list() {
 		String sql = "SELECT * FROM dim_subprefeitura";
 		
-		RowMapper<Contact> rowMapper = new RowMapper<Contact>() {
+		RowMapper<DimSubprefeituras> rowMapper = new RowMapper<DimSubprefeituras>() {
 
 			@Override
-			public Contact mapRow(ResultSet rs, int rowNum) throws SQLException {
+			public DimSubprefeituras mapRow(ResultSet rs, int rowNum) throws SQLException {
 				Integer cd_subprefeitura = rs.getInt("cd_subprefeitura");
 				String nm_subprefeitura = rs.getString("nm_subprefeitura");
 				String cd_sigla = rs.getString("cd_sigla");
@@ -79,7 +79,7 @@ public class ContactDAOImpl implements ContactDAO {
 				Date dt_carga = rs.getDate("dt_carga");
 				String origem_dado = rs.getString("origem_dado");
 				
-				return new Contact(cd_subprefeitura, nm_subprefeitura, cd_sigla, ci_ativo_inativo, dt_carga, origem_dado); 
+				return new DimSubprefeituras(cd_subprefeitura, nm_subprefeitura, cd_sigla, ci_ativo_inativo, dt_carga, origem_dado); 
 			}
 			
 		};

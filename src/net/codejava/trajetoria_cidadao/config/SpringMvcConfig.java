@@ -11,8 +11,8 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-import net.codejava.trajetoria_cidadao.dao.ContactDAO;
-import net.codejava.trajetoria_cidadao.dao.ContactDAOImpl;
+import net.codejava.trajetoria_cidadao.dao.DimSubprefeiturasDAO;
+import net.codejava.trajetoria_cidadao.dao.DimSubprefeiturasDAOImpl;
 
 @Configuration
 @EnableWebMvc
@@ -40,8 +40,8 @@ public class SpringMvcConfig implements WebMvcConfigurer{
 	}
 	
 	@Bean
-	public ContactDAO getContactDAO() {
-		return new ContactDAOImpl(getDataSource());
+	public DimSubprefeiturasDAO getContactDAO() {
+		return new DimSubprefeiturasDAOImpl(getDataSource());
 		
 	}
 }
