@@ -1,0 +1,6 @@
+com\smads\covs\trajetoria_cidadao\exception\UserNotFoundException.class
+com\smads\covs\trajetoria_cidadao\controller\DimCidadaoController.class
+com\smads\covs\trajetoria_cidadao\TrajetoriaCidadaoApplication.class
+com\smads\covs\trajetoria_cidadao\model\DimCidadao.class
+com\smads\covs\trajetoria_cidadao\repository\DimCidadaoRepository.class
+com\smads\covs\trajetoria_cidadao\service\DimCidadaoService.class
