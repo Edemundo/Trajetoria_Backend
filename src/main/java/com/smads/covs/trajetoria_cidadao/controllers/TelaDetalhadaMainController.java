@@ -83,11 +83,15 @@ public class TelaDetalhadaMainController {
       objServicosData.setCodSabeLerEscreverMemb(jsonObjStrPSFEData.getString("codSabeLerEscreverMemb"));
       objServicosData.setDescTrabMembro(jsonObjStrPSFEData.getString("descTrabMembro"));
       objServicosData.setIndAjudaNaoMemb(jsonObjStrPSFEData.getString("indAjudaNaoMemb"));
-      objServicosData.setQtdPessoasDomicFam(jsonObjStrPSFEData.getString("qtdPessoasDomicFam"));
       objServicosData.setCodFamiliarFam(jsonObjStrPSFEData.getString("codFamiliarFam"));
       objServicosData.setVlrRendaMediaFam(jsonObjStrPSFEData.getString("vlrRendaMediaFam"));
       objServicosData.setDescEndereco(jsonObjStrPSFEData.getString("descEndereco"));
       objServicosData.setIndAjudaFamiliaMemb(jsonObjStrPSFEData.getString("indAjudaFamiliaMemb"));
+      objServicosData.setCodTrabalhoDozeMesesMemb(jsonObjStrPSFEData.getString("codTrabalhoDozeMesesMemb"));
+      objServicosData.setIndAjudaEspecializadoMemb(jsonObjStrPSFEData.getString("indAjudaEspecializadoMemb"));
+      objServicosData.setIndAjudaVizinhoMemb(jsonObjStrPSFEData.getString("indAjudaVizinhoMemb"));
+      objServicosData.setIndAjudaInstituicaoMemb(jsonObjStrPSFEData.getString("indAjudaInstituicaoMemb"));
+      objServicosData.setIndAjudaOutraMemb(jsonObjStrPSFEData.getString("indAjudaOutraMemb"));
 
       return new ResponseEntity<>(objServicosData, HttpStatus.OK);
     }

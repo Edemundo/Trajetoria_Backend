@@ -72,7 +72,7 @@ public class SmitService {
               dadosSisaVinculado.setNmSubprefeitura(service.getString("nmSubprefeitura"));
               dadosSisaVinculado.setNmServico(service.getString("nmServico"));
               dadosSisaVinculado.setDcTipoServico(service.getString("nmTipoServico"));
-              dadosSisaVinculado.setDcMotivoDesligamento(service.getString("nmMotivoDeligamento"));
+              dadosSisaVinculado.setDcMotivoDesligamento(service.getString("nmMotivoDesligamento"));
               dadosSisaVinculado.setDcMotivoProcura(service.getString("nmMotivoProcura"));
               dadosSisaVinculado.setDcOrigemProcura(service.getString("nmOrigemProcura"));
               dadosSisaVinculado.setDtVinculacao(service.getString("dtVinculacao"));

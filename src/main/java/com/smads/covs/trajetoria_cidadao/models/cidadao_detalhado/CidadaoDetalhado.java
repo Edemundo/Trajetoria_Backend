@@ -42,9 +42,13 @@ public class CidadaoDetalhado {
     private String descTrabMembro;
     private String indAjudaNaoMemb;
     private String indAjudaFamiliaMemb;
+    private String codTrabalhoDozeMesesMemb;
+    private String indAjudaEspecializadoMemb;
+    private String indAjudaVizinhoMemb;
+    private String indAjudaInstituicaoMemb;
+    private String indAjudaOutraMemb;
 
     // DW - Tabela Familia_Cadunico
-    private String qtdPessoasDomicFam;
     private String codFamiliarFam;
     private String vlrRendaMediaFam;
     private String descEndereco;
@@ -189,11 +193,11 @@ public class CidadaoDetalhado {
       return indAjudaFamiliaMemb;
     }
 
-  public void setIndAjudaFamiliaMemb(String indAjudaFamiliaMemb) {
-    this.indAjudaFamiliaMemb = indAjudaFamiliaMemb;
-  }
+    public void setIndAjudaFamiliaMemb(String indAjudaFamiliaMemb) {
+      this.indAjudaFamiliaMemb = indAjudaFamiliaMemb;
+    }
 
-  public String getIndDefSurdezProfundaMemb() {
+    public String getIndDefSurdezProfundaMemb() {
         return indDefSurdezProfundaMemb;
     }
 
@@ -241,7 +245,7 @@ public class CidadaoDetalhado {
       this.nmPais = nmPais;
     }
 
-  public String getIndDefFisicaMemb() {
+    public String getIndDefFisicaMemb() {
         return indDefFisicaMemb;
     }
 
@@ -329,14 +333,6 @@ public class CidadaoDetalhado {
         this.indAjudaNaoMemb = indAjudaNaoMemb;
     }
 
-    public String getQtdPessoasDomicFam() {
-        return qtdPessoasDomicFam;
-    }
-
-    public void setQtdPessoasDomicFam(String qtdPessoasDomicFam) {
-        this.qtdPessoasDomicFam = qtdPessoasDomicFam;
-    }
-
     public String getCodFamiliarFam() {
         return codFamiliarFam;
     }
@@ -361,47 +357,90 @@ public class CidadaoDetalhado {
         this.descEndereco = descEndereco;
     }
 
-  @Override
-  public String toString() {
-    return "CidadaoDetalhado{" +
-      "ciCidadao=" + ciCidadao +
-      ", nrCpf=" + nrCpf +
-      ", cdNis=" + cdNis +
-      ", ageCidadao=" + ageCidadao +
-      ", nmCidadao='" + nmCidadao + '\'' +
-      ", nmMae='" + nmMae + '\'' +
-      ", dcRaca='" + dcRaca + '\'' +
-      ", dcTipoSexo='" + dcTipoSexo + '\'' +
-      ", dcSitCidadao='" + dcSitCidadao + '\'' +
-      ", dtNasc=" + dtNasc +
-      ", nmPais='" + nmPais + '\'' +
-      ", descResponsavel='" + descResponsavel + '\'' +
-      ", indDefBaixaVisaoMemb='" + indDefBaixaVisaoMemb + '\'' +
-      ", indDefSindromeDownMemb='" + indDefSindromeDownMemb + '\'' +
-      ", indDefSurdezProfundaMemb='" + indDefSurdezProfundaMemb + '\'' +
-      ", codDeficienciaMemb='" + codDeficienciaMemb + '\'' +
-      ", indDefTranstornoMentalMemb='" + indDefTranstornoMentalMemb + '\'' +
-      ", indDefMentalMemb='" + indDefMentalMemb + '\'' +
-      ", indDefSurdezLeveMemb='" + indDefSurdezLeveMemb + '\'' +
-      ", indDefFisicaMemb='" + indDefFisicaMemb + '\'' +
-      ", indDefCegueiraMemb='" + indDefCegueiraMemb + '\'' +
-      ", descAnoSerieFrequentaMemb='" + descAnoSerieFrequentaMemb + '\'' +
-      ", descCursoFrequentaMemb='" + descCursoFrequentaMemb + '\'' +
-      ", descCursoFrequentouPessoaMemb='" + descCursoFrequentouPessoaMemb + '\'' +
-      ", codConcluiuFrequentouMemb='" + codConcluiuFrequentouMemb + '\'' +
-      ", descFrequentaEscolaMemb='" + descFrequentaEscolaMemb + '\'' +
-      ", descAnoSerieFrequentouMemb='" + descAnoSerieFrequentouMemb + '\'' +
-      ", codSabeLerEscreverMemb='" + codSabeLerEscreverMemb + '\'' +
-      ", descTrabMembro='" + descTrabMembro + '\'' +
-      ", indAjudaNaoMemb='" + indAjudaNaoMemb + '\'' +
-      ", indAjudaFamiliaMemb='" + indAjudaFamiliaMemb + '\'' +
-      ", qtdPessoasDomicFam='" + qtdPessoasDomicFam + '\'' +
-      ", codFamiliarFam='" + codFamiliarFam + '\'' +
-      ", vlrRendaMediaFam='" + vlrRendaMediaFam + '\'' +
-      ", descEndereco='" + descEndereco + '\'' +
-      ", lstSisa=" + lstSisa +
-      ", lstSisaPernoite=" + lstSisaPernoite +
-//      ", lstSiscr=" + lstSiscr +
-      '}';
-  }
+    public String getCodTrabalhoDozeMesesMemb() {
+      return codTrabalhoDozeMesesMemb;
+    }
+
+    public void setCodTrabalhoDozeMesesMemb(String codTrabalhoDozeMesesMemb) {
+      this.codTrabalhoDozeMesesMemb = codTrabalhoDozeMesesMemb;
+    }
+
+    public String getIndAjudaEspecializadoMemb() {
+      return indAjudaEspecializadoMemb;
+    }
+
+    public void setIndAjudaEspecializadoMemb(String indAjudaEspecializadoMemb) {
+      this.indAjudaEspecializadoMemb = indAjudaEspecializadoMemb;
+    }
+
+    public String getIndAjudaVizinhoMemb() {
+      return indAjudaVizinhoMemb;
+    }
+
+    public void setIndAjudaVizinhoMemb(String indAjudaVizinhoMemb) {
+      this.indAjudaVizinhoMemb = indAjudaVizinhoMemb;
+    }
+
+    public String getIndAjudaInstituicaoMemb() {
+      return indAjudaInstituicaoMemb;
+    }
+
+    public void setIndAjudaInstituicaoMemb(String indAjudaInstituicaoMemb) {
+      this.indAjudaInstituicaoMemb = indAjudaInstituicaoMemb;
+    }
+
+    public String getIndAjudaOutraMemb() {
+      return indAjudaOutraMemb;
+    }
+
+    public void setIndAjudaOutraMemb(String indAjudaOutraMemb) {
+      this.indAjudaOutraMemb = indAjudaOutraMemb;
+    }
+
+    @Override
+    public String toString() {
+      return "CidadaoDetalhado{" +
+        "ciCidadao=" + ciCidadao +
+        ", nrCpf=" + nrCpf +
+        ", cdNis=" + cdNis +
+        ", ageCidadao=" + ageCidadao +
+        ", nmCidadao='" + nmCidadao + '\'' +
+        ", nmMae='" + nmMae + '\'' +
+        ", dcRaca='" + dcRaca + '\'' +
+        ", dcTipoSexo='" + dcTipoSexo + '\'' +
+        ", dcSitCidadao='" + dcSitCidadao + '\'' +
+        ", dtNasc='" + dtNasc + '\'' +
+        ", nmPais='" + nmPais + '\'' +
+        ", descResponsavel='" + descResponsavel + '\'' +
+        ", indDefBaixaVisaoMemb='" + indDefBaixaVisaoMemb + '\'' +
+        ", indDefSindromeDownMemb='" + indDefSindromeDownMemb + '\'' +
+        ", indDefSurdezProfundaMemb='" + indDefSurdezProfundaMemb + '\'' +
+        ", codDeficienciaMemb='" + codDeficienciaMemb + '\'' +
+        ", indDefTranstornoMentalMemb='" + indDefTranstornoMentalMemb + '\'' +
+        ", indDefMentalMemb='" + indDefMentalMemb + '\'' +
+        ", indDefSurdezLeveMemb='" + indDefSurdezLeveMemb + '\'' +
+        ", indDefFisicaMemb='" + indDefFisicaMemb + '\'' +
+        ", indDefCegueiraMemb='" + indDefCegueiraMemb + '\'' +
+        ", descAnoSerieFrequentaMemb='" + descAnoSerieFrequentaMemb + '\'' +
+        ", descCursoFrequentaMemb='" + descCursoFrequentaMemb + '\'' +
+        ", descCursoFrequentouPessoaMemb='" + descCursoFrequentouPessoaMemb + '\'' +
+        ", codConcluiuFrequentouMemb='" + codConcluiuFrequentouMemb + '\'' +
+        ", descFrequentaEscolaMemb='" + descFrequentaEscolaMemb + '\'' +
+        ", descAnoSerieFrequentouMemb='" + descAnoSerieFrequentouMemb + '\'' +
+        ", codSabeLerEscreverMemb='" + codSabeLerEscreverMemb + '\'' +
+        ", descTrabMembro='" + descTrabMembro + '\'' +
+        ", indAjudaNaoMemb='" + indAjudaNaoMemb + '\'' +
+        ", indAjudaFamiliaMemb='" + indAjudaFamiliaMemb + '\'' +
+        ", codTrabalhoDozeMesesMemb='" + codTrabalhoDozeMesesMemb + '\'' +
+        ", indAjudaEspecializadoMemb='" + indAjudaEspecializadoMemb + '\'' +
+        ", indAjudaVizinhoMemb='" + indAjudaVizinhoMemb + '\'' +
+        ", indAjudaInstituicaoMemb='" + indAjudaInstituicaoMemb + '\'' +
+        ", indAjudaOutraMemb='" + indAjudaOutraMemb + '\'' +
+        ", codFamiliarFam='" + codFamiliarFam + '\'' +
+        ", vlrRendaMediaFam='" + vlrRendaMediaFam + '\'' +
+        ", descEndereco='" + descEndereco + '\'' +
+        ", lstSisa=" + lstSisa +
+        ", lstSisaPernoite=" + lstSisaPernoite +
+        '}';
+    }
 }

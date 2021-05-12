@@ -106,12 +106,6 @@ public class PessoalSaudeFinancasEducacaoDataController {
         DimTipoSexo sexoCidadao = findTipoSexo(dimCidadao.getCiTipoSexo());
         if(sexoCidadao != null){
             String strSexoCidadao = objectWriter.writeValueAsString(sexoCidadao);
-            if(strSexoCidadao == "Ativo" || strSexoCidadao == "Bloqueado"){
-              strSexoCidadao = "Vivo";
-            }
-            else{
-              strSexoCidadao = "Falecido";
-            }
             Map<String, Object> mapStrSexoCidadao = mapper.readValue(strSexoCidadao, Map.class);
             strPersonalData.putAll(mapStrSexoCidadao);
         }
@@ -121,13 +115,6 @@ public class PessoalSaudeFinancasEducacaoDataController {
             String strPaisOrigem = objectWriter.writeValueAsString(paisOrigem);
             Map<String, Object> mapStrPaisOrigem = mapper.readValue(strPaisOrigem, Map.class);
             strPersonalData.putAll(mapStrPaisOrigem);
-        }
-
-        DimSituacaoCidadao dimSituacaoCidadao = findSituacaoCidadao(dimCidadao.getCiSitCidadao());
-        if(dimSituacaoCidadao != null){
-            String strSituacaoCidadao = objectWriter.writeValueAsString(dimSituacaoCidadao);
-            Map<String, Object> mapStrSituacaoCidadao = mapper.readValue(strSituacaoCidadao, Map.class);
-            strPersonalData.putAll(mapStrSituacaoCidadao);
         }
 
         JSONObject jsonObjCidadaoDetalhado = new JSONObject(strPersonalData);
@@ -142,6 +129,16 @@ public class PessoalSaudeFinancasEducacaoDataController {
         LocalDate ldDtNasc = dtResultDtNasc.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         Integer ageCidadao = Period.between(ldDtNasc, dtHoje).getYears();
 
+        // Modificando a situação do cidadão
+        String situacaoCidadao;
+        if(dimCidadao.getCiSitCidadao() == 2 || dimCidadao.getCiSitCidadao() == 3){
+          situacaoCidadao = "Vivo";
+        }
+        else{
+          situacaoCidadao = "Falecido";
+        }
+
+        jsonObjCidadaoDetalhado.put("dcSitCidadao", situacaoCidadao);
         jsonObjCidadaoDetalhado.put("dtNasc", strDtResultDtNasc);
         jsonObjCidadaoDetalhado.put("ageCidadao",ageCidadao);
 
@@ -758,6 +755,76 @@ public class PessoalSaudeFinancasEducacaoDataController {
 
                 jsonObjHealthData.put("indAjudaNaoMemb", descAjudaDeTerceiro);
 
+                //Pessoa recebe ajuda especializada
+                String strIndAjudaEspecializadoMemb = jsonObjHealthData.getString("indAjudaEspecializadoMemb");
+                String descIndAjudaEspecializadoMemb;
+
+                if(strIndAjudaEspecializadoMemb == null || strIndAjudaEspecializadoMemb == "null" || strIndAjudaEspecializadoMemb == "0"){
+                  descIndAjudaEspecializadoMemb = "Opção não marcada no formulário";
+                }
+                else{
+                  descIndAjudaEspecializadoMemb = "Opção marcada no formulário";
+                }
+
+                jsonObjHealthData.put("indAjudaEspecializadoMemb",descIndAjudaEspecializadoMemb);
+
+                //Pessoa recebe ajuda de vizinhos
+                String strIndAjudaVizinhoMemb = jsonObjHealthData.getString("indAjudaVizinhoMemb");
+                String descAjudaVizinhoMemb;
+
+                if(strIndAjudaVizinhoMemb == null || strIndAjudaVizinhoMemb == "null" || strIndAjudaVizinhoMemb == "0"){
+                  descAjudaVizinhoMemb = "Opção não marcada no formulário";
+                }
+                else{
+                  descAjudaVizinhoMemb = "Opção marcada no formulário";
+                }
+
+                jsonObjHealthData.put("indAjudaVizinhoMemb", descAjudaVizinhoMemb);
+
+                //Pessoa recebe ajuda de instituição
+                String strIndAjudaInstituicaoMemb = jsonObjHealthData.getString("indAjudaInstituicaoMemb");
+                String descIndAjudaInstituicaoMemb;
+
+                if(strIndAjudaInstituicaoMemb == null || strIndAjudaInstituicaoMemb == "null" || strIndAjudaInstituicaoMemb == "0"){
+                  descIndAjudaInstituicaoMemb = "Opção não marcada no formulário";
+                }
+                else{
+                  descIndAjudaInstituicaoMemb = "Opção marcada no formulário";
+                }
+
+                jsonObjHealthData.put("indAjudaInstituicaoMemb", descIndAjudaInstituicaoMemb);
+
+                //Pessoa recebe algum outro tipo de ajuda
+                String strIndAjudaOutraMemb = jsonObjHealthData.getString("indAjudaOutraMemb");
+                String descIndAjudaOutraMemb;
+
+                if(strIndAjudaOutraMemb == null || strIndAjudaOutraMemb == "null" || strIndAjudaOutraMemb == "0"){
+                  descIndAjudaOutraMemb = "Opção não marcada no formulário";
+                }
+                else{
+                  descIndAjudaOutraMemb = "Opção marcada no formulário";
+                }
+
+                jsonObjHealthData.put("indAjudaOutraMemb",descIndAjudaOutraMemb);
+
+                //Pessoa trabalhou nos ultimos 12 meses
+                String strCodTrabalhoDozeMesesMemb = jsonObjHealthData.getString("codTrabalhoDozeMesesMemb");
+                Integer intCodTrabalhoDozeMesesMemb = 99;
+
+                if(strCodTrabalhoDozeMesesMemb != "null" && strCodTrabalhoDozeMesesMemb != null){
+                  intCodTrabalhoDozeMesesMemb = Integer.parseInt(strCodTrabalhoDozeMesesMemb);
+                }
+
+                String descCodTrabalhoDozeMesesMemb;
+
+                if(intCodTrabalhoDozeMesesMemb == 2 || intCodTrabalhoDozeMesesMemb == null){
+                  descCodTrabalhoDozeMesesMemb = "Não";
+                }
+                else{
+                  descCodTrabalhoDozeMesesMemb = "Sim";
+                }
+
+                jsonObjHealthData.put("codTrabalhoDozeMesesMemb", descCodTrabalhoDozeMesesMemb);
 
                 strHealthData = mapper.readValue(jsonObjHealthData.toString(), HashMap.class);
             }

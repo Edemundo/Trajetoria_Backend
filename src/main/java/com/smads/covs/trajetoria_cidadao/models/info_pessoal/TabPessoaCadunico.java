@@ -36,80 +36,13 @@ public class TabPessoaCadunico {
   private String indAjudaFamiliaMemb;
   private String indAjudaNaoMemb;
   private String codPrincipalTrabMemb;
-  private String codTrabalho12MesesMemb;
+  private String codTrabalhoDozeMesesMemb;
   private String indAjudaEspecializadoMemb;
   private String indAjudaVizinhoMemb;
   private String indAjudaInstituicaoMemb;
   private String indAjudaOutraMemb;
 
   public TabPessoaCadunico() {
-  }
-
-  public TabPessoaCadunico(String numNisPessoaAtual) {
-    this.numNisPessoaAtual = numNisPessoaAtual;
-  }
-
-  public TabPessoaCadunico(String codFamiliarFam, String codParentescoRfPessoa,
-                           String codDeficienciaMemb, String indDefCegueiraMemb,
-                           String indDefBaixaVisaoMemb, String indDefSurdezProfundaMemb,
-                           String indDefSurdezLeveMemb, String indDefFisicaMemb, String indDefMentalMemb,
-                           String indDefSindromeDownMemb, String indDefTranstornoMentalMemb, String codSabeLerEscreverMemb,
-                           String indFrequentaEscolaMemb, String codCursoFrequentaMemb, String codAnoSerieFrequentaMemb,
-                           String codConcluiuFrequentouMemb, String codCursoFrequentouPessoaMemb, String codAnoSerieFrequentouMemb,
-                           String indAjudaFamiliaMemb, String indAjudaNaoMemb, String codPrincipalTrabMemb) {
-    this.codFamiliarFam = codFamiliarFam;
-    this.codParentescoRfPessoa = codParentescoRfPessoa;
-    this.codDeficienciaMemb = codDeficienciaMemb;
-    this.indDefCegueiraMemb = indDefCegueiraMemb;
-    this.indDefBaixaVisaoMemb = indDefBaixaVisaoMemb;
-    this.indDefSurdezProfundaMemb = indDefSurdezProfundaMemb;
-    this.indDefSurdezLeveMemb = indDefSurdezLeveMemb;
-    this.indDefFisicaMemb = indDefFisicaMemb;
-    this.indDefMentalMemb = indDefMentalMemb;
-    this.indDefSindromeDownMemb = indDefSindromeDownMemb;
-    this.indDefTranstornoMentalMemb = indDefTranstornoMentalMemb;
-    this.codSabeLerEscreverMemb = codSabeLerEscreverMemb;
-    this.indFrequentaEscolaMemb = indFrequentaEscolaMemb;
-    this.codCursoFrequentaMemb = codCursoFrequentaMemb;
-    this.codAnoSerieFrequentaMemb = codAnoSerieFrequentaMemb;
-    this.codConcluiuFrequentouMemb = codConcluiuFrequentouMemb;
-    this.codCursoFrequentouPessoaMemb = codCursoFrequentouPessoaMemb;
-    this.codAnoSerieFrequentouMemb = codAnoSerieFrequentouMemb;
-    this.indAjudaFamiliaMemb = indAjudaFamiliaMemb;
-    this.indAjudaNaoMemb = indAjudaNaoMemb;
-    this.codPrincipalTrabMemb = codPrincipalTrabMemb;
-  }
-
-  public TabPessoaCadunico(String numNisPessoaAtual, String codFamiliarFam, String codParentescoRfPessoa,
-                           String codDeficienciaMemb, String indDefCegueiraMemb,
-                           String indDefBaixaVisaoMemb, String indDefSurdezProfundaMemb,
-                           String indDefSurdezLeveMemb, String indDefFisicaMemb, String indDefMentalMemb,
-                           String indDefSindromeDownMemb, String indDefTranstornoMentalMemb, String codSabeLerEscreverMemb,
-                           String indFrequentaEscolaMemb, String codCursoFrequentaMemb, String codAnoSerieFrequentaMemb,
-                           String codConcluiuFrequentouMemb, String codCursoFrequentouPessoaMemb, String codAnoSerieFrequentouMemb,
-                           String indAjudaFamiliaMemb, String indAjudaNaoMemb, String codPrincipalTrabMemb) {
-    this.numNisPessoaAtual = numNisPessoaAtual;
-    this.codFamiliarFam = codFamiliarFam;
-    this.codParentescoRfPessoa = codParentescoRfPessoa;
-    this.codDeficienciaMemb = codDeficienciaMemb;
-    this.indDefCegueiraMemb = indDefCegueiraMemb;
-    this.indDefBaixaVisaoMemb = indDefBaixaVisaoMemb;
-    this.indDefSurdezProfundaMemb = indDefSurdezProfundaMemb;
-    this.indDefSurdezLeveMemb = indDefSurdezLeveMemb;
-    this.indDefFisicaMemb = indDefFisicaMemb;
-    this.indDefMentalMemb = indDefMentalMemb;
-    this.indDefSindromeDownMemb = indDefSindromeDownMemb;
-    this.indDefTranstornoMentalMemb = indDefTranstornoMentalMemb;
-    this.codSabeLerEscreverMemb = codSabeLerEscreverMemb;
-    this.indFrequentaEscolaMemb = indFrequentaEscolaMemb;
-    this.codCursoFrequentaMemb = codCursoFrequentaMemb;
-    this.codAnoSerieFrequentaMemb = codAnoSerieFrequentaMemb;
-    this.codConcluiuFrequentouMemb = codConcluiuFrequentouMemb;
-    this.codCursoFrequentouPessoaMemb = codCursoFrequentouPessoaMemb;
-    this.codAnoSerieFrequentouMemb = codAnoSerieFrequentouMemb;
-    this.indAjudaFamiliaMemb = indAjudaFamiliaMemb;
-    this.indAjudaNaoMemb = indAjudaNaoMemb;
-    this.codPrincipalTrabMemb = codPrincipalTrabMemb;
   }
 
   public String getNumNisPessoaAtual() {
@@ -288,6 +221,46 @@ public class TabPessoaCadunico {
     this.codPrincipalTrabMemb = codPrincipalTrabMemb;
   }
 
+  public String getCodTrabalhoDozeMesesMemb() {
+    return codTrabalhoDozeMesesMemb;
+  }
+
+  public void setCodTrabalhoDozeMesesMemb(String codTrabalhoDozeMesesMemb) {
+    this.codTrabalhoDozeMesesMemb = codTrabalhoDozeMesesMemb;
+  }
+
+  public String getIndAjudaEspecializadoMemb() {
+    return indAjudaEspecializadoMemb;
+  }
+
+  public void setIndAjudaEspecializadoMemb(String indAjudaEspecializadoMemb) {
+    this.indAjudaEspecializadoMemb = indAjudaEspecializadoMemb;
+  }
+
+  public String getIndAjudaVizinhoMemb() {
+    return indAjudaVizinhoMemb;
+  }
+
+  public void setIndAjudaVizinhoMemb(String indAjudaVizinhoMemb) {
+    this.indAjudaVizinhoMemb = indAjudaVizinhoMemb;
+  }
+
+  public String getIndAjudaInstituicaoMemb() {
+    return indAjudaInstituicaoMemb;
+  }
+
+  public void setIndAjudaInstituicaoMemb(String indAjudaInstituicaoMemb) {
+    this.indAjudaInstituicaoMemb = indAjudaInstituicaoMemb;
+  }
+
+  public String getIndAjudaOutraMemb() {
+    return indAjudaOutraMemb;
+  }
+
+  public void setIndAjudaOutraMemb(String indAjudaOutraMemb) {
+    this.indAjudaOutraMemb = indAjudaOutraMemb;
+  }
+
   @Override
   public String toString() {
     return "TabPessoaCadunico{" +
@@ -313,6 +286,11 @@ public class TabPessoaCadunico {
       ", indAjudaFamiliaMemb='" + indAjudaFamiliaMemb + '\'' +
       ", indAjudaNaoMemb='" + indAjudaNaoMemb + '\'' +
       ", codPrincipalTrabMemb='" + codPrincipalTrabMemb + '\'' +
+      ", codTrabalhoDozeMesesMemb='" + codTrabalhoDozeMesesMemb + '\'' +
+      ", indAjudaEspecializadoMemb='" + indAjudaEspecializadoMemb + '\'' +
+      ", indAjudaVizinhoMemb='" + indAjudaVizinhoMemb + '\'' +
+      ", indAjudaInstituicaoMemb='" + indAjudaInstituicaoMemb + '\'' +
+      ", indAjudaOutraMemb='" + indAjudaOutraMemb + '\'' +
       '}';
   }
 }
