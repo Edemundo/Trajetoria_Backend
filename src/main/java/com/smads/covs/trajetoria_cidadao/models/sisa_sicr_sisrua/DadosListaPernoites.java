@@ -1,44 +1,24 @@
 package com.smads.covs.trajetoria_cidadao.models.sisa_sicr_sisrua;
 
 import java.util.Date;
-import java.util.List;
 
-public class DadosSisaPernoite {
+public class DadosListaPernoites {
 
-  private String primeiraData;
-  private String ultimaData;
-  private Integer qtdEstadias;
+  private Date dtHospedagem;
   private String nmSubprefeitura;
   private String nmDistrito;
   private String nmServico;
   private String nmTipoServico;
-  private List<DadosListaPernoites> lstPernoitadas;
 
-  public DadosSisaPernoite() {
+  public DadosListaPernoites() {
   }
 
-  public String getPrimeiraData() {
-    return primeiraData;
+  public Date getDtHospedagem() {
+    return dtHospedagem;
   }
 
-  public void setPrimeiraData(String primeiraData) {
-    this.primeiraData = primeiraData;
-  }
-
-  public String getUltimaData() {
-    return ultimaData;
-  }
-
-  public void setUltimaData(String ultimaData) {
-    this.ultimaData = ultimaData;
-  }
-
-  public Integer getQtdEstadias() {
-    return qtdEstadias;
-  }
-
-  public void setQtdEstadias(Integer qtdEstadias) {
-    this.qtdEstadias = qtdEstadias;
+  public void setDtHospedagem(Date dtHospedagem) {
+    this.dtHospedagem = dtHospedagem;
   }
 
   public String getNmSubprefeitura() {
@@ -73,25 +53,14 @@ public class DadosSisaPernoite {
     this.nmTipoServico = nmTipoServico;
   }
 
-  public List<DadosListaPernoites> getLstPernoitadas() {
-    return lstPernoitadas;
-  }
-
-  public void setLstPernoitadas(List<DadosListaPernoites> lstPernoitadas) {
-    this.lstPernoitadas = lstPernoitadas;
-  }
-
   @Override
   public String toString() {
-    return "DadosSisaPernoite{" +
-      "primeiraData='" + primeiraData + '\'' +
-      ", ultimaData='" + ultimaData + '\'' +
-      ", qtdEstadias=" + qtdEstadias +
+    return "SisaPernoiteData{" +
+      "dtHospedagem=" + dtHospedagem +
       ", nmSubprefeitura='" + nmSubprefeitura + '\'' +
       ", nmDistrito='" + nmDistrito + '\'' +
       ", nmServico='" + nmServico + '\'' +
       ", nmTipoServico='" + nmTipoServico + '\'' +
-      ", lstPernoitadas=" + lstPernoitadas +
       '}';
   }
 }

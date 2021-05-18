@@ -31,6 +31,7 @@ public class TabPessoaCadunico {
   private String codConcluiuFrequentouMemb;
   private String codCursoFrequentouPessoaMemb;
   private String codAnoSerieFrequentouMemb;
+  private String indTrabalhoInfantilPessoa;
 
   // Atributos usados em financeiro
   private String indAjudaFamiliaMemb;
@@ -261,6 +262,14 @@ public class TabPessoaCadunico {
     this.indAjudaOutraMemb = indAjudaOutraMemb;
   }
 
+  public String getIndTrabalhoInfantilPessoa() {
+    return indTrabalhoInfantilPessoa;
+  }
+
+  public void setIndTrabalhoInfantilPessoa(String indTrabalhoInfantilPessoa) {
+    this.indTrabalhoInfantilPessoa = indTrabalhoInfantilPessoa;
+  }
+
   @Override
   public String toString() {
     return "TabPessoaCadunico{" +
@@ -283,6 +292,7 @@ public class TabPessoaCadunico {
       ", codConcluiuFrequentouMemb='" + codConcluiuFrequentouMemb + '\'' +
       ", codCursoFrequentouPessoaMemb='" + codCursoFrequentouPessoaMemb + '\'' +
       ", codAnoSerieFrequentouMemb='" + codAnoSerieFrequentouMemb + '\'' +
+      ", indTrabalhoInfantilPessoa='" + indTrabalhoInfantilPessoa + '\'' +
       ", indAjudaFamiliaMemb='" + indAjudaFamiliaMemb + '\'' +
       ", indAjudaNaoMemb='" + indAjudaNaoMemb + '\'' +
       ", codPrincipalTrabMemb='" + codPrincipalTrabMemb + '\'' +

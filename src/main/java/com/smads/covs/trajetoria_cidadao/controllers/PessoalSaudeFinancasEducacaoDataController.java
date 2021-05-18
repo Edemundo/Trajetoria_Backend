@@ -63,6 +63,7 @@ public class PessoalSaudeFinancasEducacaoDataController {
 
         // Remover o que não será utilizado no frontend
         JSONObject jsonObjStrPSFEData = new JSONObject(strPSFEData);
+
         // Dados Escolares
         jsonObjStrPSFEData.remove("indFrequentaEscolaMemb");
         jsonObjStrPSFEData.remove("codAnoSerieFrequentaMemb");
@@ -825,6 +826,17 @@ public class PessoalSaudeFinancasEducacaoDataController {
                 }
 
                 jsonObjHealthData.put("codTrabalhoDozeMesesMemb", descCodTrabalhoDozeMesesMemb);
+
+                //Pessoa Realiza Trabalho Infantil
+                String strIndTrabalhoInfantilPessoa = jsonObjHealthData.getString("indTrabalhoInfantilPessoa");
+                String descIndTrabalhoInfantilPessoa;
+
+                if(strIndTrabalhoInfantilPessoa == null || strIndTrabalhoInfantilPessoa == "null" || strIndTrabalhoInfantilPessoa == "0"){
+                  descIndTrabalhoInfantilPessoa = null;
+                }
+                else{
+                  descIndTrabalhoInfantilPessoa = "Sim";
+                }
 
                 strHealthData = mapper.readValue(jsonObjHealthData.toString(), HashMap.class);
             }

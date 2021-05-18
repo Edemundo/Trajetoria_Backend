@@ -14,6 +14,7 @@ public class DadosSisaVinculado {
     private String dcMotivoDesligamento;
     private String dtVinculacao;
     private String dtDesligamento;
+    private Long tempoPermanencia;
 
     public DadosSisaVinculado() {
     }
@@ -90,9 +91,17 @@ public class DadosSisaVinculado {
       this.dtDesligamento = dtDesligamento;
     }
 
+    public Long getTempoPermanencia() {
+      return tempoPermanencia;
+    }
+
+    public void setTempoPermanencia(Long tempoPermanencia) {
+      this.tempoPermanencia = tempoPermanencia;
+    }
+
     @Override
     public String toString() {
-      return "DadosSisa{" +
+      return "DadosSisaVinculado{" +
         "nmDistrito='" + nmDistrito + '\'' +
         ", nmSubprefeitura='" + nmSubprefeitura + '\'' +
         ", nmServico='" + nmServico + '\'' +
@@ -100,8 +109,9 @@ public class DadosSisaVinculado {
         ", dcOrigemProcura='" + dcOrigemProcura + '\'' +
         ", dcMotivoProcura='" + dcMotivoProcura + '\'' +
         ", dcMotivoDesligamento='" + dcMotivoDesligamento + '\'' +
-        ", dtVinculacao=" + dtVinculacao +
-        ", dtDesligamento=" + dtDesligamento +
+        ", dtVinculacao='" + dtVinculacao + '\'' +
+        ", dtDesligamento='" + dtDesligamento + '\'' +
+        ", tempoPermanencia=" + tempoPermanencia +
         '}';
     }
 }
