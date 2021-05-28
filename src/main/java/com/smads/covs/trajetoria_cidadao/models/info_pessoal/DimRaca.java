@@ -13,15 +13,6 @@ public class DimRaca {
   public DimRaca() {
   }
 
-  public DimRaca(Integer ciRaca) {
-    this.ciRaca = ciRaca;
-  }
-
-  public DimRaca(Integer ciRaca, String dcRaca) {
-    this.ciRaca = ciRaca;
-    this.dcRaca = dcRaca;
-  }
-
   public Integer getCiRaca() {
     return ciRaca;
   }

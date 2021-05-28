@@ -1,0 +1,88 @@
+{
+	"info": {
+		"_postman_id": "5fe4c3e9-8bb1-4027-898a-ad678e32900c",
+		"name": "trajetoria_cidadao",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET recebendo informações enviadas pelo CCP",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/cidadao/find/12718282860/12402262720/MARIA FATIMA PEREIRA DE OLIVEIRA/MARIA PEREIRA DE OLIVEIRA/1972-01-12 00:00:00",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cidadao",
+						"find",
+						"12718282860",
+						"12402262720",
+						"MARIA FATIMA PEREIRA DE OLIVEIRA",
+						"MARIA PEREIRA DE OLIVEIRA",
+						"1972-01-12 00:00:00"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET recebendo informações enviadas pelo CCP Exemplo Cidadao Duplicado",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/cidadao/find/12718282860/12402262720/MARIA FATIMA PEREIRA DE OLIVEIRA/MARIA PEREIRA DE OLIVEIRA/1972-01-12 00:00:00",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cidadao",
+						"find",
+						"12718282860",
+						"12402262720",
+						"MARIA FATIMA PEREIRA DE OLIVEIRA",
+						"MARIA PEREIRA DE OLIVEIRA",
+						"1972-01-12 00:00:00"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST para página detalhada do cidadão",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ciCidadao\": 1,\r\n    \"nmCidadao\": \"MARIA FATIMA PEREIRA DE OLIVEIRA\",\r\n    \"nmMae\": \"MARIA PEREIRA DE OLIVEIRA\",\r\n    \"dtNasc\": \"1972-01-12T03:00:00.000+00:00\",\r\n    \"cdNis\": 12402262720,\r\n    \"nrCpf\": 12718282860,\r\n    \"nrMembrosFamilia\": 1,\r\n    \"ciTipoSexo\": 2,\r\n    \"ciRacaObservada\": 3,\r\n    \"ciPaisOrigem\": 10,\r\n    \"dtObito\": null,\r\n    \"ciSitCidadao\": 2,\r\n    \"tpNacionalidade\": 1,\r\n    \"cdGrauInstrucao\": null,\r\n    \"inCidadaoDesaparecido\": null,\r\n    \"inCidadaoVitimaViolencia\": null,\r\n    \"inCidadaoNecessitaCuidado\": null,\r\n    \"inCidadaoSituacaoRua\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/cidadao/detalhes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cidadao",
+						"detalhes"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

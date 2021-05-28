@@ -13,15 +13,6 @@ public class DimSituacaoCidadao {
   public DimSituacaoCidadao() {
   }
 
-  public DimSituacaoCidadao(Integer ciSitCidadao) {
-    this.ciSitCidadao = ciSitCidadao;
-  }
-
-  public DimSituacaoCidadao(Integer ciSitCidadao, String dcSitCidadao) {
-    this.ciSitCidadao = ciSitCidadao;
-    this.dcSitCidadao = dcSitCidadao;
-  }
-
   public Integer getCiSitCidadao() {
     return ciSitCidadao;
   }

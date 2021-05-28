@@ -1,0 +1,27 @@
+Análise de Dados DW
+
+BPC
+
+Total de Cidadãos BPC: 4.858.595
+Cidadãos com NIS: 2.441.940
+Cidadãos com CPF: 1.395.869
+Cidadãos com CPF e NIS: 901.175
+Cidadãos com CPF ou NIS: 2.937.127
+
+Cidadãos com CPF duplicado BPC
+CPFs duplicados: 31.646
+0 repete 139.272 vezes
+Outras repetições: 77.298
+Total de cidadãos com CPF duplicados:216.570
+
+Cidadãos com NIS duplicado BPC
+NIS duplicados: 31.615
+0 repete 183.187 vezes
+Outras repetições: 63.452
+Total de cidadãos com NIS duplicados: 246.639
+
+CadUnico
+
+Total de Cidadãos CadUnico: 6.953.236
+Cidadãos com NIS: 6.953.236
+Cidadãos com CPF:

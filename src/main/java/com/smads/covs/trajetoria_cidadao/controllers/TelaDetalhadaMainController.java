@@ -1,8 +1,5 @@
 package com.smads.covs.trajetoria_cidadao.controllers;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectWriter;
-
 import com.smads.covs.trajetoria_cidadao.models.cidadao_detalhado.CidadaoDetalhado;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -24,10 +21,7 @@ import com.smads.covs.trajetoria_cidadao.models.info_pessoal.DimCidadao;
 @Controller
 public class TelaDetalhadaMainController {
 
-    private ObjectWriter objectWriter = new ObjectMapper().writer().withDefaultPrettyPrinter();
-    private ObjectMapper mapper = new ObjectMapper();
-
-    private final PessoalSaudeFinancasEducacaoDataController pessoalSaudeFinancasEducacaoDataController;
+  private final PessoalSaudeFinancasEducacaoDataController pessoalSaudeFinancasEducacaoDataController;
     private final SmitAPICallerController smitAPICallerController;
 
     public TelaDetalhadaMainController(PessoalSaudeFinancasEducacaoDataController pessoalSaudeFinancasEducacaoDataController,
@@ -54,7 +48,7 @@ public class TelaDetalhadaMainController {
       BigInteger biNrCpf = new BigInteger(strNrCpf);
 
       String strCdNis = jsonObjStrPSFEData.getString("cdNis");
-      if(strCdNis != null && strCdNis != "null"){
+      if(strCdNis != null && !strCdNis.equals("null")){
         BigInteger biCdNis = new BigInteger(strCdNis);
         objServicosData.setCdNis(biCdNis);
         objServicosData.setDescResponsavel(jsonObjStrPSFEData.getString("descResponsavel"));

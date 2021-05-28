@@ -13,15 +13,6 @@ public class DimPaisOrigem {
   public DimPaisOrigem() {
   }
 
-  public DimPaisOrigem(Integer ciPaisOrigem) {
-    this.ciPaisOrigem = ciPaisOrigem;
-  }
-
-  public DimPaisOrigem(Integer ciPaisOrigem, String nmPais) {
-    this.ciPaisOrigem = ciPaisOrigem;
-    this.nmPais = nmPais;
-  }
-
   public Integer getCiPaisOrigem() {
     return ciPaisOrigem;
   }

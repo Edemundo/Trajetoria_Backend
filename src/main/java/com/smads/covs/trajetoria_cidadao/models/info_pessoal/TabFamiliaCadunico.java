@@ -18,43 +18,8 @@ public class TabFamiliaCadunico {
     private String nomTituloLogradouroFam;
     private String nomLogradouroFam;
     private String numLogradouroFam;
-    //private Date dtCarga;
-
-    public TabFamiliaCadunico(String codFamiliarFam, String qtdPessoasDomicFam,
-                              String vlrRendaMediaFam, String indTrabalhoInfantilFam,
-                              String nomLocalidadeFam, String nomTipLogradouroFam,
-                              String nomTituloLogradouroFam, String nomLogradouroFam,
-                              String numLogradouroFam) {
-        this.codFamiliarFam = codFamiliarFam;
-        this.qtdPessoasDomicFam = qtdPessoasDomicFam;
-        this.vlrRendaMediaFam = vlrRendaMediaFam;
-        this.indTrabalhoInfantilFam = indTrabalhoInfantilFam;
-        this.nomLocalidadeFam = nomLocalidadeFam;
-        this.nomTipLogradouroFam = nomTipLogradouroFam;
-        this.nomTituloLogradouroFam = nomTituloLogradouroFam;
-        this.nomLogradouroFam = nomLogradouroFam;
-        this.numLogradouroFam = numLogradouroFam;
-    }
-
-    public TabFamiliaCadunico(String codFamiliarFam) {
-        this.codFamiliarFam = codFamiliarFam;
-    }
 
     public TabFamiliaCadunico() {
-    }
-
-    public TabFamiliaCadunico(String qtdPessoasDomicFam, String vlrRendaMediaFam,
-                              String indTrabalhoInfantilFam, String nomLocalidadeFam,
-                              String nomTipLogradouroFam, String nomTituloLogradouroFam,
-                              String nomLogradouroFam, String numLogradouroFam) {
-        this.qtdPessoasDomicFam = qtdPessoasDomicFam;
-        this.vlrRendaMediaFam = vlrRendaMediaFam;
-        this.indTrabalhoInfantilFam = indTrabalhoInfantilFam;
-        this.nomLocalidadeFam = nomLocalidadeFam;
-        this.nomTipLogradouroFam = nomTipLogradouroFam;
-        this.nomTituloLogradouroFam = nomTituloLogradouroFam;
-        this.nomLogradouroFam = nomLogradouroFam;
-        this.numLogradouroFam = numLogradouroFam;
     }
 
     public String getCodFamiliarFam() {

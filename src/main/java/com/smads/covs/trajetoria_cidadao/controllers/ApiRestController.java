@@ -11,7 +11,6 @@ package com.smads.covs.trajetoria_cidadao.controllers;
   import java.text.DateFormat;
   import java.text.ParseException;
   import java.text.SimpleDateFormat;
-  import java.time.LocalDateTime;
   import java.util.Date;
   import java.util.List;
 
@@ -21,7 +20,7 @@ public class ApiRestController {
 
   private final DimCidadaoService dimCidadaoService;
 
-  DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
+  DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 
   public ApiRestController(DimCidadaoService dimCidadaoService) {
     this.dimCidadaoService = dimCidadaoService;
@@ -30,13 +29,12 @@ public class ApiRestController {
   @GetMapping("/find/{nrCpf}/{cdNis}/{nmCidadao}/{nmMae}/{dtNasc}")
   public ResponseEntity<List<DimCidadao>> getDimCidadaos(@PathVariable("nrCpf") String nrCpf, @PathVariable("cdNis") String cdNis,
                                                          @PathVariable("nmCidadao") String nmCidadao, @PathVariable("nmMae") String nmMae,
-                                                         @PathVariable("dtNasc") String dtNasc) throws ParseException, JSONException {
+                                                         @PathVariable("dtNasc") String dtNasc) throws ParseException {
 
-    LocalDateTime now = LocalDateTime.now();
     Date dtNascimento;
     BigInteger intNrCpf;
     BigInteger intCdNis;
-    Integer i;
+    int i;
 
     if(dtNasc.equals("0")){
       dtNascimento = null;

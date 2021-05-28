@@ -23,9 +23,9 @@ import java.util.Date;
 @Controller
 public class PessoalSaudeFinancasEducacaoDataController {
 
-    private ObjectWriter objectWriter = new ObjectMapper().writer().withDefaultPrettyPrinter();
-    private ObjectMapper mapper = new ObjectMapper();
-    private SimpleDateFormat formatadorDatas = new SimpleDateFormat("dd-MM-yyyy");
+    private final ObjectWriter objectWriter = new ObjectMapper().writer().withDefaultPrettyPrinter();
+    private final ObjectMapper mapper = new ObjectMapper();
+    private final SimpleDateFormat formatadorDatas = new SimpleDateFormat("dd-MM-yyyy");
 
     private final DimRacaService dimRacaService;
     private final DimTipoSexoService dimTipoSexoService;
@@ -747,7 +747,7 @@ public class PessoalSaudeFinancasEducacaoDataController {
 
                 String descAjudaDeTerceiro;
 
-                if (intIndAjudaNaoMemb == 0 || strIndAjudaNaoMemb == "null") {
+                if (intIndAjudaNaoMemb == 0 || strIndAjudaNaoMemb.equals("null")) {
                     descAjudaDeTerceiro = "Opção não marcada no formulário";
                 }
                 else {
@@ -760,7 +760,7 @@ public class PessoalSaudeFinancasEducacaoDataController {
                 String strIndAjudaEspecializadoMemb = jsonObjHealthData.getString("indAjudaEspecializadoMemb");
                 String descIndAjudaEspecializadoMemb;
 
-                if(strIndAjudaEspecializadoMemb == null || strIndAjudaEspecializadoMemb == "null" || strIndAjudaEspecializadoMemb == "0"){
+                if(strIndAjudaEspecializadoMemb == null || strIndAjudaEspecializadoMemb.equals("null") || strIndAjudaEspecializadoMemb == "0"){
                   descIndAjudaEspecializadoMemb = "Opção não marcada no formulário";
                 }
                 else{
@@ -773,7 +773,7 @@ public class PessoalSaudeFinancasEducacaoDataController {
                 String strIndAjudaVizinhoMemb = jsonObjHealthData.getString("indAjudaVizinhoMemb");
                 String descAjudaVizinhoMemb;
 
-                if(strIndAjudaVizinhoMemb == null || strIndAjudaVizinhoMemb == "null" || strIndAjudaVizinhoMemb == "0"){
+                if(strIndAjudaVizinhoMemb == null || strIndAjudaVizinhoMemb.equals("null") || strIndAjudaVizinhoMemb == "0"){
                   descAjudaVizinhoMemb = "Opção não marcada no formulário";
                 }
                 else{
@@ -786,7 +786,7 @@ public class PessoalSaudeFinancasEducacaoDataController {
                 String strIndAjudaInstituicaoMemb = jsonObjHealthData.getString("indAjudaInstituicaoMemb");
                 String descIndAjudaInstituicaoMemb;
 
-                if(strIndAjudaInstituicaoMemb == null || strIndAjudaInstituicaoMemb == "null" || strIndAjudaInstituicaoMemb == "0"){
+                if(strIndAjudaInstituicaoMemb == null || strIndAjudaInstituicaoMemb == "null" || strIndAjudaInstituicaoMemb.equals("0")){
                   descIndAjudaInstituicaoMemb = "Opção não marcada no formulário";
                 }
                 else{
@@ -799,7 +799,7 @@ public class PessoalSaudeFinancasEducacaoDataController {
                 String strIndAjudaOutraMemb = jsonObjHealthData.getString("indAjudaOutraMemb");
                 String descIndAjudaOutraMemb;
 
-                if(strIndAjudaOutraMemb == null || strIndAjudaOutraMemb == "null" || strIndAjudaOutraMemb == "0"){
+                if(strIndAjudaOutraMemb == null || strIndAjudaOutraMemb == "null" || strIndAjudaOutraMemb.equals("0")){
                   descIndAjudaOutraMemb = "Opção não marcada no formulário";
                 }
                 else{
@@ -861,11 +861,46 @@ public class PessoalSaudeFinancasEducacaoDataController {
 
                 jsonFinantialData = new JSONObject(strFinantialData);
                 // Concatenando o endereço do cidadão
-                Integer numEndereco = Integer.parseInt(jsonFinantialData.getString("numLogradouroFam").trim());
-                String endTipLog = jsonFinantialData.getString("nomTipLogradouroFam").trim();
-                String endNomLog = jsonFinantialData.getString("nomTituloLogradouroFam").trim();
-                String endLog = jsonFinantialData.getString("nomLogradouroFam").trim();
-                String endNomLoc = jsonFinantialData.getString("nomLocalidadeFam").trim();
+                Integer numEndereco = null;
+                if(jsonFinantialData.getString("numLogradouroFam").trim() != null &&
+                  jsonFinantialData.getString("numLogradouroFam").trim() != "null"){
+                  numEndereco = Integer.parseInt(jsonFinantialData.getString("numLogradouroFam").trim());
+                }
+                else{
+                  numEndereco = 0;
+                }
+
+                String endTipLog = null;
+                if(jsonFinantialData.getString("nomTipLogradouroFam").trim() != null){
+                  endTipLog = jsonFinantialData.getString("nomTipLogradouroFam").trim();
+                }
+                else{
+                  endTipLog = "";
+                }
+
+                String endNomLog = null;
+                if(jsonFinantialData.getString("nomTituloLogradouroFam").trim() != null){
+                  endNomLog = jsonFinantialData.getString("nomTituloLogradouroFam").trim();
+                }
+                else{
+                  endNomLog = "";
+                }
+
+                String endLog = null;
+                if(jsonFinantialData.getString("nomLogradouroFam").trim() != null){
+                  endLog = jsonFinantialData.getString("nomLogradouroFam").trim();
+                }
+                else{
+                  endLog = "";
+                }
+
+                String endNomLoc = null;
+                if(jsonFinantialData.getString("nomLocalidadeFam").trim() != null){
+                  endNomLoc = jsonFinantialData.getString("nomLocalidadeFam").trim();
+                }
+                else{
+                  endNomLoc = "";
+                }
 
                 if(endTipLog == "null"){
                     endTipLog = "";
@@ -879,13 +914,19 @@ public class PessoalSaudeFinancasEducacaoDataController {
                 if(endNomLoc == "null"){
                     endNomLoc = "";
                 }
-                String strFullAddress = endTipLog + " "
-                        + endNomLog + " "
-                        + endLog  + ", nº"
-                        + numEndereco + ", "
-                        + endNomLoc + ", "
-                        + "SÃO PAULO - SP - BRASIL";
-                jsonFinantialData.put("descEndereco", strFullAddress);
+
+                if(endLog != ""){
+                  String strFullAddress = endTipLog + " "
+                    + endNomLog + " "
+                    + endLog  + ", nº"
+                    + numEndereco + ", "
+                    + endNomLoc + ", "
+                    + "SÃO PAULO - SP - BRASIL";
+                  jsonFinantialData.put("descEndereco", strFullAddress);
+                }
+                else{
+                  jsonFinantialData.put("descEndereco", "");
+                }
 
                 // Mudando o formato da renda familiar para float
                 String strVlrRendaFamiliar = jsonFinantialData.getString("vlrRendaMediaFam");

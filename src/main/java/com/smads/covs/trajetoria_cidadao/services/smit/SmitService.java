@@ -2,6 +2,7 @@ package com.smads.covs.trajetoria_cidadao.services.smit;
 
 import com.smads.covs.trajetoria_cidadao.models.sisa_sicr_sisrua.DadosSisaVinculado;
 import com.smads.covs.trajetoria_cidadao.models.sisa_sicr_sisrua.DadosSisaPernoite;
+import com.smads.covs.trajetoria_cidadao.models.sisa_sicr_sisrua.DadosSiscr;
 import com.smads.covs.trajetoria_cidadao.models.sisa_sicr_sisrua.DimTipoServico;
 
 import org.springframework.stereotype.Service;
@@ -26,7 +27,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.io.IOException;
 import java.math.BigInteger;
-import java.text.SimpleDateFormat;
 
 @Service
 public class SmitService {
@@ -39,13 +39,16 @@ public class SmitService {
 
   private final List<DadosSisaPernoite> lstDadosSisaPernoite;
   private final List<DadosSisaVinculado> lstDadosSisaVinculado;
+  private final List<DadosSiscr> lstDadosSiscr;
 
   public SmitService(DimTipoServicoService dimTipoServicoService,
                      List<DadosSisaPernoite> lstDadosSisaPernoite,
-                     List<DadosSisaVinculado> lstDadosSisaVinculado) {
+                     List<DadosSisaVinculado> lstDadosSisaVinculado,
+                     List<DadosSiscr> lstDadosSiscr) {
     this.dimTipoServicoService = dimTipoServicoService;
     this.lstDadosSisaPernoite = lstDadosSisaPernoite;
     this.lstDadosSisaVinculado = lstDadosSisaVinculado;
+    this.lstDadosSiscr = lstDadosSiscr;
   }
 
 
@@ -69,7 +72,7 @@ public class SmitService {
             String strVincResultRequest = EntityUtils.toString(entity);
 
             JSONArray arrResultRequest =  new JSONArray(strVincResultRequest);
-            Integer lenghtListVinc = arrResultRequest.length();
+            int lenghtListVinc = arrResultRequest.length();
 
             for(int i = 0; i< lenghtListVinc; i++){
 
@@ -122,7 +125,7 @@ public class SmitService {
           String strPernResultRequest = EntityUtils.toString(entity);
 
           JSONArray arrResultRequest =  new JSONArray(strPernResultRequest);
-          Integer lenghtListPern = arrResultRequest.length();
+          int lenghtListPern = arrResultRequest.length();
 
           for(int i = 0; i < lenghtListPern; i++){
 
@@ -137,13 +140,17 @@ public class SmitService {
             date = LocalDate.parse(strUltimaData, inputFormatter);
             strUltimaData = outputFormatter.format(date);
 
+            // Tratar tipos dos serviços que estão escritos por extenso
+            DimTipoServico dimTipoServico = dimTipoServicoService.findDimTipoServico(service.getString("nmTipoServico"));
+            String nmServicoResumido = dimTipoServico.getDcTipoSimplificado();
+
             dadosSisaPernoite.setPrimeiraData(strPrimeiraData);
             dadosSisaPernoite.setUltimaData(strUltimaData);
             dadosSisaPernoite.setQtdEstadias(service.getInt("qtdEstadias"));
             dadosSisaPernoite.setNmDistrito(service.getString("nmDistrito"));
             dadosSisaPernoite.setNmServico(service.getString("nmServico"));
             dadosSisaPernoite.setNmSubprefeitura(service.getString("nmSubprefeitura"));
-            dadosSisaPernoite.setNmTipoServico(service.getString("nmTipoServico"));
+            dadosSisaPernoite.setNmTipoServico(nmServicoResumido);
             //dadosSisaPernoite.setLstPernoitadas(service.get(""));
 
             lstDadosSisaPernoite.add(dadosSisaPernoite);
@@ -157,10 +164,50 @@ public class SmitService {
       return lstDadosSisaPernoite;
     }
 
-//    public List<DadosSiscr> SmitAPISiscrCaller(BigInteger ciCidadao){
-//
-//        // Chamar API
-//
-//        return null;
-//    }
+    public List<DadosSiscr> SmitAPISiscrCaller(BigInteger ciCidadao) throws URISyntaxException, IOException {
+
+      lstDadosSiscr.clear();
+      HttpGet httpGet = new HttpGet("http://localhost:9091/it0101/siscr");
+
+      URI uri = new URIBuilder(httpGet.getURI())
+        .addParameter("ciCidadao", String.valueOf(ciCidadao))
+        .build();
+
+      httpGet.setURI(uri);
+
+      try (CloseableHttpResponse response = httpClient.execute(httpGet)) {
+
+        HttpEntity entity = response.getEntity();
+
+        if (entity != null) {
+          String strSiscrResultRequest = EntityUtils.toString(entity);
+
+          JSONArray arrResultRequest =  new JSONArray(strSiscrResultRequest);
+          int lenghtListSiscr = arrResultRequest.length();
+
+          for(int i = 0; i < lenghtListSiscr; i++){
+
+            DadosSiscr dadosSiscr = new DadosSiscr();
+            JSONObject service = arrResultRequest.getJSONObject(i);
+
+            dadosSiscr.setDcEncaminhamento(service.getString("dcEncaminhamento"));
+            dadosSiscr.setDcTipoProcura(service.getString("dcTipoProcura"));
+            dadosSiscr.setDcMotivoProcura(service.getString("dcMotivoProcura"));
+            dadosSiscr.setDcTipoProvidencia(service.getString("dcTipoProvidencia"));
+            dadosSiscr.setDtAtualizacao(service.getString("dtAtualizacao"));
+            dadosSiscr.setDtPreAtendimento(service.getString("dtPreAtendimento"));
+            dadosSiscr.setNmCentroAssistencial(service.getString("nmCentroAssistencial"));
+            dadosSiscr.setNmSubprefeitura(service.getString("nmSubprefeitura"));
+
+            lstDadosSiscr.add(dadosSiscr);
+          }
+
+        }
+
+      } catch (ClientProtocolException | JSONException e) {
+        e.printStackTrace();
+      }
+
+      return lstDadosSiscr;
+    }
 }

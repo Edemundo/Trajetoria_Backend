@@ -23,26 +23,6 @@ public class DimCidadao implements Serializable {
   public DimCidadao() {
   }
 
-  public DimCidadao(BigInteger ciCidadao) {
-    this.ciCidadao = ciCidadao;
-  }
-
-  public DimCidadao(BigInteger ciCidadao, String nmCidadao, String nmMae,
-                    Date dtNasc, BigInteger cdNis, BigInteger nrCpf,
-                    Integer ciTipoSexo, Integer ciRacaObservada,
-                    Integer ciPaisOrigem, Integer ciSitCidadao) {
-    this.ciCidadao = ciCidadao;
-    this.nmCidadao = nmCidadao;
-    this.nmMae = nmMae;
-    this.dtNasc = dtNasc;
-    this.cdNis = cdNis;
-    this.nrCpf = nrCpf;
-    this.ciTipoSexo = ciTipoSexo;
-    this.ciRacaObservada = ciRacaObservada;
-    this.ciPaisOrigem = ciPaisOrigem;
-    this.ciSitCidadao = ciSitCidadao;
-  }
-
   public BigInteger getCiCidadao() {
     return ciCidadao;
   }

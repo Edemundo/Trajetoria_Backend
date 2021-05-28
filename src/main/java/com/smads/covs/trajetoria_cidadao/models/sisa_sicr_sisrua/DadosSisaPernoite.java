@@ -12,7 +12,7 @@ public class DadosSisaPernoite {
   private String nmDistrito;
   private String nmServico;
   private String nmTipoServico;
-  private List<DadosListaPernoites> lstPernoitadas;
+  //private List<DadosListaPernoites> lstPernoitadas;
 
   public DadosSisaPernoite() {
   }
@@ -73,13 +73,13 @@ public class DadosSisaPernoite {
     this.nmTipoServico = nmTipoServico;
   }
 
-  public List<DadosListaPernoites> getLstPernoitadas() {
-    return lstPernoitadas;
-  }
-
-  public void setLstPernoitadas(List<DadosListaPernoites> lstPernoitadas) {
-    this.lstPernoitadas = lstPernoitadas;
-  }
+//  public List<DadosListaPernoites> getLstPernoitadas() {
+//    return lstPernoitadas;
+//  }
+//
+//  public void setLstPernoitadas(List<DadosListaPernoites> lstPernoitadas) {
+//    this.lstPernoitadas = lstPernoitadas;
+//  }
 
   @Override
   public String toString() {
@@ -91,7 +91,7 @@ public class DadosSisaPernoite {
       ", nmDistrito='" + nmDistrito + '\'' +
       ", nmServico='" + nmServico + '\'' +
       ", nmTipoServico='" + nmTipoServico + '\'' +
-      ", lstPernoitadas=" + lstPernoitadas +
+//      ", lstPernoitadas=" + lstPernoitadas +
       '}';
   }
 }

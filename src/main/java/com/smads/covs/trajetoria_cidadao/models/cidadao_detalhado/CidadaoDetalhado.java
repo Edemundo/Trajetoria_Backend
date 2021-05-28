@@ -2,6 +2,7 @@ package com.smads.covs.trajetoria_cidadao.models.cidadao_detalhado;
 
 import com.smads.covs.trajetoria_cidadao.models.sisa_sicr_sisrua.DadosSisaVinculado;
 import com.smads.covs.trajetoria_cidadao.models.sisa_sicr_sisrua.DadosSisaPernoite;
+import com.smads.covs.trajetoria_cidadao.models.sisa_sicr_sisrua.DadosSiscr;
 
 import java.math.BigInteger;
 import java.util.List;
@@ -56,7 +57,7 @@ public class CidadaoDetalhado {
     // Dados SMIT
     private List<DadosSisaVinculado> lstSisa;
     private List<DadosSisaPernoite> lstSisaPernoite;
-    //private List<DadosSiscr> lstSiscr;
+    private List<DadosSiscr> lstSiscr;
 
     public CidadaoDetalhado() {
     }
@@ -77,13 +78,13 @@ public class CidadaoDetalhado {
         this.lstSisaPernoite = lstSisaPernoite;
     }
 
-//    public List<DadosSiscr> getLstSiscr() {
-//        return lstSiscr;
-//    }
-//
-//    public void setLstSiscr(List<DadosSiscr> lstSiscr) {
-//        this.lstSiscr = lstSiscr;
-//    }
+    public List<DadosSiscr> getLstSiscr() {
+        return lstSiscr;
+    }
+
+    public void setLstSiscr(List<DadosSiscr> lstSiscr) {
+        this.lstSiscr = lstSiscr;
+    }
 
     public BigInteger getCiCidadao() {
         return ciCidadao;
@@ -397,50 +398,51 @@ public class CidadaoDetalhado {
       this.indAjudaOutraMemb = indAjudaOutraMemb;
     }
 
-    @Override
-    public String toString() {
-      return "CidadaoDetalhado{" +
-        "ciCidadao=" + ciCidadao +
-        ", nrCpf=" + nrCpf +
-        ", cdNis=" + cdNis +
-        ", ageCidadao=" + ageCidadao +
-        ", nmCidadao='" + nmCidadao + '\'' +
-        ", nmMae='" + nmMae + '\'' +
-        ", dcRaca='" + dcRaca + '\'' +
-        ", dcTipoSexo='" + dcTipoSexo + '\'' +
-        ", dcSitCidadao='" + dcSitCidadao + '\'' +
-        ", dtNasc='" + dtNasc + '\'' +
-        ", nmPais='" + nmPais + '\'' +
-        ", descResponsavel='" + descResponsavel + '\'' +
-        ", indDefBaixaVisaoMemb='" + indDefBaixaVisaoMemb + '\'' +
-        ", indDefSindromeDownMemb='" + indDefSindromeDownMemb + '\'' +
-        ", indDefSurdezProfundaMemb='" + indDefSurdezProfundaMemb + '\'' +
-        ", codDeficienciaMemb='" + codDeficienciaMemb + '\'' +
-        ", indDefTranstornoMentalMemb='" + indDefTranstornoMentalMemb + '\'' +
-        ", indDefMentalMemb='" + indDefMentalMemb + '\'' +
-        ", indDefSurdezLeveMemb='" + indDefSurdezLeveMemb + '\'' +
-        ", indDefFisicaMemb='" + indDefFisicaMemb + '\'' +
-        ", indDefCegueiraMemb='" + indDefCegueiraMemb + '\'' +
-        ", descAnoSerieFrequentaMemb='" + descAnoSerieFrequentaMemb + '\'' +
-        ", descCursoFrequentaMemb='" + descCursoFrequentaMemb + '\'' +
-        ", descCursoFrequentouPessoaMemb='" + descCursoFrequentouPessoaMemb + '\'' +
-        ", codConcluiuFrequentouMemb='" + codConcluiuFrequentouMemb + '\'' +
-        ", descFrequentaEscolaMemb='" + descFrequentaEscolaMemb + '\'' +
-        ", descAnoSerieFrequentouMemb='" + descAnoSerieFrequentouMemb + '\'' +
-        ", codSabeLerEscreverMemb='" + codSabeLerEscreverMemb + '\'' +
-        ", descTrabMembro='" + descTrabMembro + '\'' +
-        ", indAjudaNaoMemb='" + indAjudaNaoMemb + '\'' +
-        ", indAjudaFamiliaMemb='" + indAjudaFamiliaMemb + '\'' +
-        ", codTrabalhoDozeMesesMemb='" + codTrabalhoDozeMesesMemb + '\'' +
-        ", indAjudaEspecializadoMemb='" + indAjudaEspecializadoMemb + '\'' +
-        ", indAjudaVizinhoMemb='" + indAjudaVizinhoMemb + '\'' +
-        ", indAjudaInstituicaoMemb='" + indAjudaInstituicaoMemb + '\'' +
-        ", indAjudaOutraMemb='" + indAjudaOutraMemb + '\'' +
-        ", codFamiliarFam='" + codFamiliarFam + '\'' +
-        ", vlrRendaMediaFam='" + vlrRendaMediaFam + '\'' +
-        ", descEndereco='" + descEndereco + '\'' +
-        ", lstSisa=" + lstSisa +
-        ", lstSisaPernoite=" + lstSisaPernoite +
-        '}';
-    }
+  @Override
+  public String toString() {
+    return "CidadaoDetalhado{" +
+      "ciCidadao=" + ciCidadao +
+      ", nrCpf=" + nrCpf +
+      ", cdNis=" + cdNis +
+      ", ageCidadao=" + ageCidadao +
+      ", nmCidadao='" + nmCidadao + '\'' +
+      ", nmMae='" + nmMae + '\'' +
+      ", dcRaca='" + dcRaca + '\'' +
+      ", dcTipoSexo='" + dcTipoSexo + '\'' +
+      ", dcSitCidadao='" + dcSitCidadao + '\'' +
+      ", dtNasc='" + dtNasc + '\'' +
+      ", nmPais='" + nmPais + '\'' +
+      ", descResponsavel='" + descResponsavel + '\'' +
+      ", indDefBaixaVisaoMemb='" + indDefBaixaVisaoMemb + '\'' +
+      ", indDefSindromeDownMemb='" + indDefSindromeDownMemb + '\'' +
+      ", indDefSurdezProfundaMemb='" + indDefSurdezProfundaMemb + '\'' +
+      ", codDeficienciaMemb='" + codDeficienciaMemb + '\'' +
+      ", indDefTranstornoMentalMemb='" + indDefTranstornoMentalMemb + '\'' +
+      ", indDefMentalMemb='" + indDefMentalMemb + '\'' +
+      ", indDefSurdezLeveMemb='" + indDefSurdezLeveMemb + '\'' +
+      ", indDefFisicaMemb='" + indDefFisicaMemb + '\'' +
+      ", indDefCegueiraMemb='" + indDefCegueiraMemb + '\'' +
+      ", descAnoSerieFrequentaMemb='" + descAnoSerieFrequentaMemb + '\'' +
+      ", descCursoFrequentaMemb='" + descCursoFrequentaMemb + '\'' +
+      ", descCursoFrequentouPessoaMemb='" + descCursoFrequentouPessoaMemb + '\'' +
+      ", codConcluiuFrequentouMemb='" + codConcluiuFrequentouMemb + '\'' +
+      ", descFrequentaEscolaMemb='" + descFrequentaEscolaMemb + '\'' +
+      ", descAnoSerieFrequentouMemb='" + descAnoSerieFrequentouMemb + '\'' +
+      ", codSabeLerEscreverMemb='" + codSabeLerEscreverMemb + '\'' +
+      ", descTrabMembro='" + descTrabMembro + '\'' +
+      ", indAjudaNaoMemb='" + indAjudaNaoMemb + '\'' +
+      ", indAjudaFamiliaMemb='" + indAjudaFamiliaMemb + '\'' +
+      ", codTrabalhoDozeMesesMemb='" + codTrabalhoDozeMesesMemb + '\'' +
+      ", indAjudaEspecializadoMemb='" + indAjudaEspecializadoMemb + '\'' +
+      ", indAjudaVizinhoMemb='" + indAjudaVizinhoMemb + '\'' +
+      ", indAjudaInstituicaoMemb='" + indAjudaInstituicaoMemb + '\'' +
+      ", indAjudaOutraMemb='" + indAjudaOutraMemb + '\'' +
+      ", codFamiliarFam='" + codFamiliarFam + '\'' +
+      ", vlrRendaMediaFam='" + vlrRendaMediaFam + '\'' +
+      ", descEndereco='" + descEndereco + '\'' +
+      ", lstSisa=" + lstSisa +
+      ", lstSisaPernoite=" + lstSisaPernoite +
+      ", lstSiscr=" + lstSiscr +
+      '}';
+  }
 }

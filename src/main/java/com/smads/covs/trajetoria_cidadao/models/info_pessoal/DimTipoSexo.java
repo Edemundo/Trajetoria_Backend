@@ -13,15 +13,6 @@ public class DimTipoSexo {
   public DimTipoSexo() {
   }
 
-  public DimTipoSexo(Integer ciTipoSexo) {
-    this.ciTipoSexo = ciTipoSexo;
-  }
-
-  public DimTipoSexo(Integer ciTipoSexo, String dcTipoSexo) {
-    this.ciTipoSexo = ciTipoSexo;
-    this.dcTipoSexo = dcTipoSexo;
-  }
-
   public Integer getCiTipoSexo() {
     return ciTipoSexo;
   }
