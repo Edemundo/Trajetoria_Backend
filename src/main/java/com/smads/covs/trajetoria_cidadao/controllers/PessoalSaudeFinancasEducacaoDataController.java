@@ -538,8 +538,12 @@ public class PessoalSaudeFinancasEducacaoDataController {
                 jsonObjHealthData.put("descAnoSerieFrequentouMemb", descAnoSerieFrequentou);
 
                 //Pessoa sabe ler e escrever
+                Integer intCodSabeLerEscreverMemb = null;
                 String strCodSabeLerEscreverMemb = jsonObjHealthData.getString("codSabeLerEscreverMemb");
-                Integer intCodSabeLerEscreverMemb = Integer.parseInt(strCodSabeLerEscreverMemb);
+                if(strCodSabeLerEscreverMemb != "null"){
+                  intCodSabeLerEscreverMemb = Integer.parseInt(strCodSabeLerEscreverMemb);
+                }
+
                 String descSabeLerEscrever;
                 if (intCodSabeLerEscreverMemb == 1) {
                     descSabeLerEscrever = "Sim";
@@ -551,10 +555,12 @@ public class PessoalSaudeFinancasEducacaoDataController {
                 jsonObjHealthData.put("codSabeLerEscreverMemb", descSabeLerEscrever);
 
                 //Pessoa concluiu o curso frequentado
+                Integer intCodConcluiuFrequentouMemb = null;
                 String strCodConcluiuFrequentouMemb = jsonObjHealthData.getString("codConcluiuFrequentouMemb");
-                Integer intCodConcluiuFrequentouMemb = Integer.parseInt(strCodConcluiuFrequentouMemb);
+                if(strCodConcluiuFrequentouMemb != "null"){
+                  intCodConcluiuFrequentouMemb = Integer.parseInt(strCodConcluiuFrequentouMemb);
+                }
                 String descConcluiu;
-
                 if (intCodConcluiuFrequentouMemb == 1) {
                     descConcluiu = "Sim";
                 }
@@ -565,8 +571,12 @@ public class PessoalSaudeFinancasEducacaoDataController {
                 jsonObjHealthData.put("codConcluiuFrequentouMemb", descConcluiu);
 
                 // Responsável Familiar
+                Integer intResponsavel = null;
                 String strResponsavel = jsonObjHealthData.getString("codParentescoRfPessoa");
-                Integer intResponsavel = Integer.parseInt(strResponsavel);
+                if(strResponsavel != "null"){
+                  intResponsavel = Integer.parseInt(strResponsavel);
+                }
+
                 String descResponsavel;
                 if(intResponsavel == 1){
                     descResponsavel = "Sim";
@@ -578,8 +588,11 @@ public class PessoalSaudeFinancasEducacaoDataController {
                 jsonObjHealthData.put("descResponsavel", descResponsavel);
 
                 // Pessoa tem deficiência
+                Integer intCodDefMemb = null;
                 String strCodDefMemb = jsonObjHealthData.getString("codDeficienciaMemb");
-                Integer intCodDefMemb =  Integer.parseInt(strCodDefMemb);
+                if(strCodDefMemb != "null"){
+                  intCodDefMemb =  Integer.parseInt(strCodDefMemb);
+                }
                 String descCodDefMemb;
                 if (intCodDefMemb == 1) {
                     descCodDefMemb = "Sim";
@@ -870,7 +883,7 @@ public class PessoalSaudeFinancasEducacaoDataController {
                   numEndereco = 0;
                 }
 
-                String endTipLog = null;
+                String endTipLog;
                 if(jsonFinantialData.getString("nomTipLogradouroFam").trim() != null){
                   endTipLog = jsonFinantialData.getString("nomTipLogradouroFam").trim();
                 }
@@ -878,7 +891,7 @@ public class PessoalSaudeFinancasEducacaoDataController {
                   endTipLog = "";
                 }
 
-                String endNomLog = null;
+                String endNomLog;
                 if(jsonFinantialData.getString("nomTituloLogradouroFam").trim() != null){
                   endNomLog = jsonFinantialData.getString("nomTituloLogradouroFam").trim();
                 }
@@ -886,7 +899,7 @@ public class PessoalSaudeFinancasEducacaoDataController {
                   endNomLog = "";
                 }
 
-                String endLog = null;
+                String endLog;
                 if(jsonFinantialData.getString("nomLogradouroFam").trim() != null){
                   endLog = jsonFinantialData.getString("nomLogradouroFam").trim();
                 }
@@ -894,7 +907,7 @@ public class PessoalSaudeFinancasEducacaoDataController {
                   endLog = "";
                 }
 
-                String endNomLoc = null;
+                String endNomLoc;
                 if(jsonFinantialData.getString("nomLocalidadeFam").trim() != null){
                   endNomLoc = jsonFinantialData.getString("nomLocalidadeFam").trim();
                 }
